@@ -137,11 +137,11 @@ class SortComparison {
 	 *         order.
 	 */
 
-	static double[] mergeSortIterative(double a[]) {
+	// static double[] mergeSortIterative(double a[]) {
 
-		// todo: implement the sort
+	// 	// todo: implement the sort
 
-	}// end mergesortIterative
+	// }// end mergesortIterative
 
 	/**
 	 * Sorts an array of doubles using recursive implementation of Merge Sort. This
@@ -151,15 +151,15 @@ class SortComparison {
 	 * @return after the method returns, the array must be in ascending sorted
 	 *         order.
 	 */
-	static double[] mergeSortRecursive(double a[]) {
+	// static double[] mergeSortRecursive(double a[]) {
 
-		// todo: implement the sort
+	// 	// todo: implement the sort
 
-	}// end mergeSortRecursive
+	// }// end mergeSortRecursive
 
-	public static void main(String[] args) {
+// 	public static void main(String[] args) {
 
-		// todo: do experiments as per assignment instructions
-	}
+// 		// todo: do experiments as per assignment instructions
+// 	}
 
-}// end class
+// }// end class
