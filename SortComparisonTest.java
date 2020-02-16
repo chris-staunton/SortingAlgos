@@ -1,10 +1,10 @@
-//import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertEquals;
 
 import java.util.Arrays;
 
-// import org.junit.Test;
-// import org.junit.runner.RunWith;
-// import org.junit.runners.JUnit4;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
 //-------------------------------------------------------------------------
 /**
@@ -13,11 +13,11 @@ import java.util.Arrays;
  *  @author
  *  @version HT 2020
  */
-//@RunWith(JUnit4.class)
+@RunWith(JUnit4.class)
 public class SortComparisonTest
 {
     //~ Constructor ........................................................
-   // @Test
+    @Test
     public void testConstructor()
     {
         new SortComparison();
@@ -29,34 +29,50 @@ public class SortComparisonTest
     /**
      * Check that the methods work for empty arrays
      */
-  //  @Test
+    @Test
     public void testEmpty()
     {
     }
     
-  //  @Test
+    @Test
     public void testInsertionSort() {
     	//SortComparison sorter = new SortComparison();
     	double a[] = {12, 11, 13, 5, 6};
     	double b[] = {5.0, 6.0, 11.0, 12.0, 13.0};
-    //	assertEquals(Arrays.toString(b), Arrays.toString(SortComparison.insertionSort(a)));
-        System.out.println(a);
+    	assertEquals(Arrays.toString(b), Arrays.toString(SortComparison.insertionSort(a)));
     }
     
-   // @Test
+    @Test
     public void testSelectionSort() {
     	//SortComparison sorter = new SortComparison();
     	double a[] = {12, 11, 13, 5, 6};
     	double b[] = {5.0, 6.0, 11.0, 12.0, 13.0};
-    //	assertEquals(Arrays.toString(b), Arrays.toString(SortComparison.selectionSort(a)));
+    	assertEquals(Arrays.toString(b), Arrays.toString(SortComparison.selectionSort(a)));
     }
     
-   // @Test
+    @Test
     public void testQuickSort() {
     	//SortComparison sorter = new SortComparison();
     	double a[] = {12, 11, 13, 5, 6};
     	double b[] = {5.0, 6.0, 11.0, 12.0, 13.0};
-    //	assertEquals(Arrays.toString(b), Arrays.toString(SortComparison.selectionSort(a)));
+    	assertEquals(Arrays.toString(b), Arrays.toString(SortComparison.quickSort(a)));
+    }
+    
+    @Test
+    public void testMergeSort() {
+    	//SortComparison sorter = new SortComparison();
+    	double a[] = {12, 11, 13, 5, 6};
+    	double b[] = {5.0, 6.0, 11.0, 12.0, 13.0};
+    	assertEquals(Arrays.toString(b), Arrays.toString(SortComparison.mergeSortRecursive(a)));
+    }
+
+    
+    @Test
+    public void testMergeSortIterative() {
+    	//SortComparison sorter = new SortComparison();
+    	double a[] = {12, 11, 13, 5, 6};
+    	double b[] = {5.0, 6.0, 11.0, 12.0, 13.0};
+    	assertEquals(Arrays.toString(b), Arrays.toString(SortComparison.mergeSortIterative(a)));
     }
 
 
