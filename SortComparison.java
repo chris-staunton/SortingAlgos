@@ -1,3 +1,7 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
 // -------------------------------------------------------------------------
 
 /**
@@ -249,9 +253,25 @@ class SortComparison {
 		return a;
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException {
 
 		// todo: do experiments as per assignment instructions
+		
+		File file = new File("numbers10.txt");
+    	Scanner scan = new Scanner(file);
+    	double[] a = new double[10];
+    	int i=0;
+    	
+    	while(scan.hasNextLine()) {
+    		a[i] = scan.nextDouble();
+    		i++;
+    	}
+    	
+    	a = selectionSort(a);
+    	
+    	for(int j=0; j<a.length; j++) {
+    		System.out.println(a[j] + "\n");
+    	}
 	}
 
 }// end class
