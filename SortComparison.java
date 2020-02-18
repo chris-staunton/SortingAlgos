@@ -257,21 +257,50 @@ class SortComparison {
 
 		// todo: do experiments as per assignment instructions
 		
-		File file = new File("numbers10.txt");
+		File file = new File("numbersSorted1000.txt");
     	Scanner scan = new Scanner(file);
-    	double[] a = new double[10];
+    	double[] a = new double[1000];
+    
     	int i=0;
     	
-    	while(scan.hasNextLine()) {
+    	while(scan.hasNextDouble()) {
     		a[i] = scan.nextDouble();
     		i++;
     	}
+    	double[] b = a;
+    	double startTime = System.nanoTime();
+    	b = selectionSort(b);
+    	double endTime = System.nanoTime();
+    	double runTime = (endTime - startTime)/1000000;
+    	System.out.println("selection sort: " +runTime+ " milliseconds");
     	
-    	a = selectionSort(a);
+     	double[] c = a;
+    	double startTimeInsert = System.nanoTime();
+    	c = insertionSort(c);
+    	double endTimeInsert= System.nanoTime();
+    	double runTimeInsert = (endTimeInsert - startTimeInsert)/1000000;
+    	System.out.println("insertion sort: " +runTimeInsert+ " milliseconds");
     	
-    	for(int j=0; j<a.length; j++) {
-    		System.out.println(a[j] + "\n");
-    	}
+    	double[] d = a;
+    	double startTimeQuick = System.nanoTime();
+    	d = quickSort(d);
+    	double endTimeQuick= System.nanoTime();
+    	double runTimeQuick = (endTimeQuick - startTimeQuick)/1000000;
+    	System.out.println("quick sort: " +runTimeQuick+ " milliseconds");
+    	
+    	double[] e = a;
+    	double startTimeMergeRecursive = System.nanoTime();
+    	e = quickSort(e);
+    	double endTimeMergeRecursive= System.nanoTime();
+    	double runTimeMergeRecursive = (endTimeMergeRecursive - startTimeMergeRecursive)/1000000;
+    	System.out.println("Merge sort recursive: " +runTimeMergeRecursive+ " milliseconds");
+    	
+    	double[] f = a;
+    	double startTimeMerge = System.nanoTime();
+    	f = quickSort(f);
+    	double endTimeMerge= System.nanoTime();
+    	double runTimeMerge = (endTimeMerge - startTimeMerge)/1000000;
+    	System.out.println("Merge sort: " +runTimeMerge+ " milliseconds");
 	}
 
 }// end class
