@@ -47,24 +47,24 @@ class SortComparison {
 	 * @return array sorted in ascending order
 	 *
 	 */
-	static double[] selectionSort(double a[]) {
+	static double[] selectionSort(double arr[]) {
 
 		// todo: implement the sort
-		for (int i = 0; i < a.length; i++) {
+		for (int i = 0; i < arr.length; i++) {
 			int minIndex = i;
 			// int j ;
-			for (int j = i + 1; j < a.length; j++) {
-				if (a[j] < a[minIndex]) {
+			for (int j = i + 1; j < arr.length; j++) {
+				if (arr[j] < arr[minIndex]) {
 					minIndex = j;
 				}
 
 			}
 			// swap
-			double tmp = a[minIndex];
-			a[minIndex] = a[i];
-			a[i] = tmp;
+			double tmp = arr[minIndex];
+			arr[minIndex] = arr[i];
+			arr[i] = tmp;
 		}
-		return a;
+		return arr;
 	}// end selectionsort
 
 	/**
@@ -259,47 +259,56 @@ class SortComparison {
 		
 		File file = new File("numbersSorted1000.txt");
     	Scanner scan = new Scanner(file);
-    	double[] a = new double[1000];
-    
+    	int sizeOfArray = 1000;
+    	//double[] a = new double[1000];
+    	double[] b = new double[sizeOfArray];
+    	double[] c = new double[sizeOfArray];
+    	double[] d = new double[sizeOfArray];
+    	double[] e = new double[sizeOfArray];
+    	double[] f = new double[sizeOfArray];
     	int i=0;
     	
     	while(scan.hasNextDouble()) {
-    		a[i] = scan.nextDouble();
+    		b[i] = scan.nextDouble();
+    		c[i] = scan.nextDouble();
+    		d[i] = scan.nextDouble();
+    		e[i] = scan.nextDouble();
+    		f[i] = scan.nextDouble();
     		i++;
     	}
-    	double[] b = a;
+    	
     	double startTime = System.nanoTime();
     	b = selectionSort(b);
     	double endTime = System.nanoTime();
-    	double runTime = (endTime - startTime)/1000000;
+    	double runTime = (endTime - startTime)/1E6;
     	System.out.println("selection sort: " +runTime+ " milliseconds");
     	
-     	double[] c = a;
+     	
     	double startTimeInsert = System.nanoTime();
     	c = insertionSort(c);
     	double endTimeInsert= System.nanoTime();
-    	double runTimeInsert = (endTimeInsert - startTimeInsert)/1000000;
+    	double runTimeInsert = (endTimeInsert - startTimeInsert)/1E6;
     	System.out.println("insertion sort: " +runTimeInsert+ " milliseconds");
     	
-    	double[] d = a;
+    	//double[] d = a;
     	double startTimeQuick = System.nanoTime();
     	d = quickSort(d);
     	double endTimeQuick= System.nanoTime();
-    	double runTimeQuick = (endTimeQuick - startTimeQuick)/1000000;
+    	double runTimeQuick = (endTimeQuick - startTimeQuick)/1E6;
     	System.out.println("quick sort: " +runTimeQuick+ " milliseconds");
     	
-    	double[] e = a;
+    	//double[] e = a;
     	double startTimeMergeRecursive = System.nanoTime();
     	e = quickSort(e);
     	double endTimeMergeRecursive= System.nanoTime();
-    	double runTimeMergeRecursive = (endTimeMergeRecursive - startTimeMergeRecursive)/1000000;
+    	double runTimeMergeRecursive = (endTimeMergeRecursive - startTimeMergeRecursive)/1E6;
     	System.out.println("Merge sort recursive: " +runTimeMergeRecursive+ " milliseconds");
     	
-    	double[] f = a;
+    //	double[] f = a;
     	double startTimeMerge = System.nanoTime();
     	f = quickSort(f);
     	double endTimeMerge= System.nanoTime();
-    	double runTimeMerge = (endTimeMerge - startTimeMerge)/1000000;
+    	double runTimeMerge = (endTimeMerge - startTimeMerge)/1E6;
     	System.out.println("Merge sort: " +runTimeMerge+ " milliseconds");
 	}
 
